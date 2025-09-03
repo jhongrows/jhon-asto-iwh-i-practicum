@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1 Video Games
+    p(style="margin: 1rem")
+      a(href="/update-cobj") Add a new Video Game
+
+    if !rows || rows.length === 0
+      p(style="margin: 1rem") No video games yet. Add one!
+    else
+      .table-wrapper
+        table
+          thead
+            tr
+              each col in columns
+                th= col
+          tbody
+            each r in rows
+              tr
+                td= r.name
+                td= r.ranking
+                td= r.genre
+                td= r.release_year

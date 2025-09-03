@@ -70,4 +70,9 @@ npm start
 GET  /             → muestra todos los registros del objeto VideoGames en tabla
 GET  /update-cobj  → formulario para crear un nuevo videojuego
 POST /update-cobj  → guarda el videojuego en HubSpot y redirige al home
+
+## 📸 Vista previa
+
+![Homepage Screenshot](./assets/screenshot-homepage.png)
+
 ---

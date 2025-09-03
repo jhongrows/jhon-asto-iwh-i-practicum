@@ -1,28 +1,73 @@
-# Welcome to the Integrating With HubSpot I: Foundations Practicum
+# Integrating With HubSpot I: Foundations Practicum – Video Games
 
-This repository is for the Integrating With HubSpot I: Foundations course. This practicum is one of two requirements for receiving your Integrating With HubSpot I: Foundations certification. You must also take the exam and receive a passing grade (at least 75%).
+Este repositorio contiene mi entrega para el **Integrating With HubSpot I: Foundations Practicum** de HubSpot Academy.  
+El objetivo fue crear una aplicación Node.js que se conecte a la API de HubSpot para gestionar un **Custom Object**.
 
-To read the full directions, please go to the [practicum instructions](https://app.hubspot.com/academy/l/tracks/1092124/1093824/5493?language=en).
+---
 
-**Put your HubSpot developer test account custom objects URL link here:** https://app.hubspot.com/contacts/l/objects/${custom-obj-number}/views/all/list
+## 🎮 Custom Object: Video Games
 
-___
-## Tips:
-- Commit to your repository often. Even if you make small tweaks to your code, it’s best to be committing to your repository frequently.
-- The subject of the custom object is up to you. Feel free to get creative!
-- Please create a test account and include your private app access token in your repo.
-- Ensure you re-merge any working branches into the main branch.
-- DO NOT ADD YOUR PRIVATE APP TOKEN TO YOUR REPOSITORY. 
+- **Internal name del objeto:** `videogames`  
+- **Propiedades creadas:**
+  - `name` (string) – **obligatoria**
+  - `ranking` (number)
+  - `genre` (string)
+  - `release_year` (number)
 
-## Pre-requisites:
-- Using [Node](https://nodejs.org/en/download) and node packages
-- Using [Express](https://expressjs.com/en/starter/installing.html)
-- Using [Axios](https://axios-http.com/docs/intro)
-- Using [Pug templating system](https://pugjs.org/api/getting-started.html)
-- Using the command line
-- Using [Git and GitHub](https://product.hubspot.com/blog/git-and-github-tutorial-for-beginners)
+- **Número de registros creados:** 5  
+- **Asociado con:** Contacts
 
-## Requirements
-- All work must be your own. During the grading process we will check the revision history. Submissions that do not meet this requirement will not be considered.
-- You must have at least two new routes in your index.js file and one new pug template for the homepage.
-- You must create a developer test account and link to it in your README.md file. Submissions that do not meet this requirement will not be considered.
+👉 **Vista de lista del custom object en mi cuenta de prueba:**  
+[VideoGames Object List View](https://app.hubspot.com/contacts/50449662/objects/2-49572380/views/all/list)
+
+---
+
+## 📂 Estructura del proyecto
+
+jhon-asto-iwh-i-practicum/
+├─ index.js
+├─ package.json
+├─ .gitignore
+├─ /views
+│ ├─ homepage.pug
+│ ├─ updates.pug
+│ └─ contacts.pug (ejemplo del repo base, no se usa)
+├─ /public/css
+│ └─ style.css
+└─ README.md
+
+
+---
+
+## ▶️ Cómo ejecutar el proyecto
+
+```sh
+# 1) Clonar el repo
+git clone https://github.com/<tu-usuario>/jhon-asto-iwh-i-practicum.git
+cd jhon-asto-iwh-i-practicum
+
+# 2) Instalar dependencias
+npm install
+
+# 3) Crear .env en la raíz (ejemplo)
+# --- Pega esto en el archivo .env ---
+PORT=3000
+HUBSPOT_PRIVATE_APP_TOKEN=pat-xxxxxxxxxxxxxxxxxxxx
+CUSTOM_OBJECT_ID=2-49572380
+PROP_NAME=name
+PROP_RANKING=ranking
+PROP_GENRE=genre
+PROP_RELEASE_YEAR=release_year
+# ------------------------------------
+
+# 4) Ejecutar
+npm start
+# abrir http://localhost:3000
+
+
+## 🌐 Rutas de la app
+
+GET  /             → muestra todos los registros del objeto VideoGames en tabla
+GET  /update-cobj  → formulario para crear un nuevo videojuego
+POST /update-cobj  → guarda el videojuego en HubSpot y redirige al home
+---

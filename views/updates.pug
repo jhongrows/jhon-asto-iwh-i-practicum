@@ -6,23 +6,22 @@ html
     title= title
     link(rel="stylesheet", href="/css/style.css")
   body
-    h1 Video Games
+    h1= title
     p(style="margin: 1rem")
-      a(href="/update-cobj") Add a new Video Game
+      a(href="/") Return to homepage
 
-    if !rows || rows.length === 0
-      p(style="margin: 1rem") No video games yet. Add one!
-    else
-      .table-wrapper
-        table
-          thead
-            tr
-              each col in columns
-                th= col
-          tbody
-            each r in rows
-              tr
-                td= r.name
-                td= r.ranking
-                td= r.genre
-                td= r.release_year
+    .form-wrapper
+      form(action="/update-cobj" method="POST")
+        label(for="name") Name
+        input#name(type="text" name="name" required)
+
+        label(for="ranking") Ranking
+        input#ranking(type="number" name="ranking")
+
+        label(for="genre") Genre
+        input#genre(type="text" name="genre")
+
+        label(for="release_year") Release Year
+        input#release_year(type="number" name="release_year")
+
+        input(type="submit" value="Save")

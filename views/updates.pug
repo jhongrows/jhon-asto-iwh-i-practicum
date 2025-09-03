@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title= title
+    link(rel="stylesheet", href="/css/style.css")
+  body
+    h1= title
+    p(style="margin: 1rem")
+      a(href="/") Return to homepage
+
+    .form-wrapper
+      form(action="/update-cobj" method="POST")
+        label(for="name") Name
+        input#name(type="text" name="name" required)
+
+        label(for="ranking") Ranking
+        input#ranking(type="number" name="ranking")
+
+        label(for="genre") Genre
+        input#genre(type="text" name="genre")
+
+        label(for="release_year") Release Year
+        input#release_year(type="number" name="release_year")
+
+        input(type="submit" value="Save")

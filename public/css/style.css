@@ -56,3 +56,29 @@ input[type="submit"] {
     padding: .375rem 1rem;
     margin-top: 10px;
 }
+/* --- Tabla para homepage --- */
+.table-wrapper {
+  max-width: 1024px;
+  margin: 1rem auto 2rem auto;
+  padding: 1rem;
+  border: solid 1px lightgrey;
+  border-radius: 10px;
+  box-shadow: 3px 2px 6px lightgrey;
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  border: 1px solid #e0e0e0;
+  padding: .6rem;
+  text-align: left;
+}
+
+th {
+  background: #f7f7f7;
+  font-weight: 600;
+}
